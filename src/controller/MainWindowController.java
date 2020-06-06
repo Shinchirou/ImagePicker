@@ -10,17 +10,14 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 
 public class MainWindowController {
     private Main main;
-    private String imagesNames = "image.png";
+    private String image = "image.png";
     private Image img;
     private List<Image> pickedImages = new ArrayList<>();
 
@@ -38,13 +35,14 @@ public class MainWindowController {
 
     @FXML
     public void clearButton() {
+        gridPane.setGridLinesVisible(false);
         gridPane.getChildren().clear();
         gridPane.setGridLinesVisible(true);
         pickedImages.clear();
     }
 
     public void start() {
-        img = new Image(getClass().getResourceAsStream(imagesNames));
+        img = new Image(getClass().getResourceAsStream(image));
         gridPane.setGridLinesVisible(true);
         anchorPane.setCursor(createCursor());
         imageView.setImage(img);
@@ -67,13 +65,10 @@ public class MainWindowController {
     }
 
     public void fillGridPane(List<Image> pickedImages) {
-        if (pickedImages == null) {
-            throw new AppException("pickedImages list is null", LocalDateTime.now());
-        }
         int idx = 0;
         ImageView imgToAdd;
-        for (int i = 0; i < gridPane.getColumnCount(); i++) {
-            for (int j = 0; j < gridPane.getRowCount(); j++) {
+        for (int i = 0; i < gridPane.impl_getColumnCount(); i++) {
+            for (int j = 0; j < gridPane.impl_getRowCount(); j++) {
                 if (idx < pickedImages.size()) {
                     imgToAdd = new ImageView(pickedImages.get(idx));
                 } else {

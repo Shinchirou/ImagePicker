@@ -38,7 +38,7 @@
                   </HBox>
                   <HBox layoutX="22.0" layoutY="45.0">
                      <children>
-                        <Text fontSmoothingType="LCD" stroke="#b21818" strokeDashOffset="10.0" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="Wycinki w kolejności malejącej średniej wartości składowej czerwonej." wrappingWidth="191.78125" />
+                        <Text fontSmoothingType="LCD" stroke="#b21818" strokeDashOffset="10.0" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="Wycinki:" wrappingWidth="191.78125" />
                      </children>
                   </HBox>
                   <GridPane fx:id="gridPane" layoutX="16.0" layoutY="125.0" prefHeight="163.0" prefWidth="163.0">
